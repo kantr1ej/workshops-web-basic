@@ -6,11 +6,13 @@ This is a containerized challenge set for the "basic" category in Hack@UCF's web
 
 The recommended way to use this container is to run this on your computer using Docker. This is easiest on a computer running OS X or Linux, but should be doable using Windows. You must have git installed.
 
-### OS X
+### OS X and Windows
 
-**NOTE**: These instructions are a little complicated and will only make complete sense to someone who already knows both Docker and bash. Please ask for help if this does not work.
+**NOTE**: These instructions are relatively complicated and will only make complete sense to someone who already knows both Docker and bash. Please ask for help if this does not work.
 
-Install the official [Docker Toolbox](https://docs.docker.com/engine/installation/mac/#installation) for OS X and open the Docker Quickstart Terminal.
+Install the official Docker Toolbox [for OS X](https://docs.docker.com/engine/installation/mac/#installation) or [for Windows](https://docs.docker.com/engine/installation/windows/#requirements). For Windows, please read the requirements section first to ensure you can run Docker. If you cannot, please talk to one of workshop staff.
+
+Open the Docker Quickstart Terminal and wait until the first-start process is complete.
 
 Please take note of your Docker Machine VM's IP address, since that IP is how you will access the challenges! Run this command to get it:
 
@@ -25,7 +27,18 @@ For the example above, you will access the webserver by going to `http://192.168
 $ git clone https://github.com/mark-ignacio/workshops-web-basic.git
 $ cd workshops-web-basic
 $ docker build -t workshop-basic .
+```
+
+On OS X, run:
+
+```
 $ docker run -it --rm -v $(pwd)/src:/var/www/html -p 0.0.0.0:80:80 --name basic workshop-basic
+```
+
+On Windows, run: (note the extra slash before `$(pwd)`)
+
+```
+$ docker run -it --rm -v /$(pwd)/src:/var/www/html -p 0.0.0.0:80:80 --name basic workshop-basic
 ```
 
 Now you can navigate to `http://DOCKER.HOST.IP.HERE` to see the contents of the src directory.
@@ -33,7 +46,7 @@ Now you can navigate to `http://DOCKER.HOST.IP.HERE` to see the contents of the 
 
 ### Linux
 
-Install the docker package for whatever distribution you're using.
+Install the docker and git packages for whatever distribution you're using.
 
 ```
 $ git clone https://github.com/mark-ignacio/workshops-web-basic.git
