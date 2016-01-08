@@ -12,7 +12,7 @@ The recommended way to use this container is to run this on your computer using 
 
 Install the official [Docker Toolbox](https://docs.docker.com/engine/installation/mac/#installation) for OS X and open the Docker Quickstart Terminal.
 
-Please take note of your Docker Machine VM's IP address, since that IP is how you will access the web server. Run this command to find out:
+Please take note of your Docker Machine VM's IP address, since that IP is how you will access the challenges! Run this command to get it:
 
 ```
 $ echo $DOCKER_HOST
@@ -28,7 +28,7 @@ $ docker build -t workshop-basic .
 $ docker run -it --rm -v $(pwd)/src:/var/www/html -p 0.0.0.0:80:80 --name basic workshop-basic
 ```
 
-Navigate to `http://localhost` to see the contents of the src directory.
+Now you can navigate to `http://DOCKER.HOST.IP.HERE` to see the contents of the src directory.
 
 
 ### Linux
